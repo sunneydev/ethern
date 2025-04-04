@@ -1,0 +1,5 @@
+{
+  "name": "@ethern/web",
+  "module": "index.ts",
+  "type": "module"
+}

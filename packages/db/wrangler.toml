@@ -1,0 +1,39 @@
+name = "ethern-api"
+main = "src/index.ts"
+compatibility_date = "2024-04-03"
+account_id = "f9475aa59ce6a35a1c6f42fe0f242108"
+compatibility_flags = ["nodejs_compat"]
+
+logpush = true
+
+route = { pattern = "api.ethern.dev", custom_domain = true }
+
+kv_namespaces = [
+  { binding = "KV", id = "81d73426fbe24f25b8b237825eb39220", preview_id = "7c79c9f3dd844145b5e2fc39a7d8599b" },
+]
+
+durable_objects.bindings = [{ name = "CLI_AUTH", class_name = "CliAuth" }]
+
+[triggers]
+crons = []
+
+[[migrations]]
+tag = "v2"
+new_classes = ["CliAuth"]
+
+[placement]
+mode = "smart"
+
+[[analytics_engine_datasets]]
+binding = "UPDATES"
+
+[[r2_buckets]]
+binding = 'R2'
+bucket_name = 'updates-prod-x'
+preview_bucket_name = 'rn-updates'
+
+[[d1_databases]]
+binding = "DB"                                               # i.e. available in your Worker on env.DB
+database_name = "ethern-db"
+database_id = "c108c58e-b4ab-47ce-97b5-25cb1939b79c"
+preview_database_id = "b21529d2-ed33-4bf6-b0d6-41cc23fabc95"

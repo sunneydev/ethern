@@ -1,0 +1,23 @@
+{
+  "name": "ethern",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "cd apps/www && bun dev"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@cloudflare/workers-types": "^4.20240405.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/bun": "^1.1.13",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.2",
+    "typescript": "^5.6.3",
+    "wrangler": "^3.87.0"
+  },
+  "dependencies": {
+    "hono": "^4.6.10"
+  }
+}

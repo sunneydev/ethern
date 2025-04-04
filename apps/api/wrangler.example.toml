@@ -1,0 +1,41 @@
+name = "your-worker-name"
+main = "src/index.ts"
+compatibility_date = "2024-04-03"
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+compatibility_flags = ["nodejs_compat"]
+
+logpush = true
+
+route = { pattern = "api.example.com", custom_domain = true }
+
+kv_namespaces = [
+  { binding = "KV", id = "YOUR_KV_NAMESPACE_ID", preview_id = "YOUR_KV_PREVIEW_ID" },
+]
+
+durable_objects.bindings = [
+  { name = "CLI_AUTH", class_name = "CliAuth" }
+]
+
+[triggers]
+crons = []
+
+[[migrations]]
+tag = "v1"
+new_classes = ["CliAuth"]
+
+[placement]
+mode = "smart"
+
+[[analytics_engine_datasets]]
+binding = "UPDATES"
+
+[[r2_buckets]]
+binding = 'R2'
+bucket_name = 'your-production-bucket'
+preview_bucket_name = 'your-preview-bucket'
+
+[[d1_databases]]
+binding = "DB"
+database_name = "your-db-name"
+database_id = "YOUR_DATABASE_ID"
+preview_database_id = "YOUR_PREVIEW_DATABASE_ID"

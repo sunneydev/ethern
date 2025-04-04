@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ESNext",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "~/*": ["./src/*"],
+      "~/hooks/*": ["./src/lib/hooks/*"],
+      "~/server/*": ["./src/server/*"],
+      "~/ui/*": ["./src/components/ui/*"],
+      "~/lib/*": ["./src/lib/*"],
+      "~/icons/*": ["./src/components/icons/*"]
+    },
+    "types": ["@cloudflare/workers-types"]
+  },
+  "include": [
+    "next-env.d.ts",
+    "env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

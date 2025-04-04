@@ -1,0 +1,19 @@
+name = "your-app-name"
+compatibility_date = "2024-04-03"
+pages_build_output_dir = ".vercel/output/static"
+compatibility_flags = ["nodejs_compat"]
+
+kv_namespaces = [
+  { binding = "KV", id = "YOUR_KV_NAMESPACE_ID", preview_id = "YOUR_KV_PREVIEW_ID" },
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "your-d1-database-name"
+database_id = "YOUR_DATABASE_ID"
+preview_database_id = "YOUR_PREVIEW_DATABASE_ID"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "your-r2-bucket-name"
+preview_bucket_name = "your-preview-bucket-name"

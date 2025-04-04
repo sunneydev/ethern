@@ -1,0 +1,8 @@
+{
+  "name": "@ethern/utils",
+  "module": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "server-only": "^0.0.1"
+  }
+}

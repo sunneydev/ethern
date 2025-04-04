@@ -1,0 +1,32 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/dist
+
+# misc
+.DS_Store
+
+# toad.config.json
+.wrangler
+dist
+
+update
+*.vars
+
+results-1.json
+results.json
+prisma/
+migrations/
+hashes
+
+sqlite.db
+
+wrangler.toml

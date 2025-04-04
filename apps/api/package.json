@@ -1,0 +1,37 @@
+{
+  "name": "@ethern/api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --persist-to ../../.wrangler/state --test-scheduled",
+    "dev:remote": "wrangler dev --remote --port 8787",
+    "cron": "curl 'http://localhost:8787/__scheduled?cron=*+*+*+*+*'",
+    "r2": "bun --hot r2.ts",
+    "push": "wrangler deploy --minify",
+    "watch": "wrangler tail rn-updates",
+    "test": "pnpm vitest"
+  },
+  "dependencies": {
+    "@clickhouse/client-web": "^1.11.0",
+    "@hono/valibot-validator": "^0.5.2",
+    "@miniflare/d1": "^2.14.4",
+    "fflate": "^0.8.2",
+    "flareutils": "^0.6.4",
+    "hono": "^4.7.5",
+    "ts-pattern": "^5.7.0",
+    "valibot": "^1.0.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.11",
+    "@hono/zod-validator": "^0.4.3",
+    "@trigger.dev/sdk": "^3.3.17",
+    "@vitest/coverage-v8": "^3.1.1",
+    "esbuild": "^0.25.2",
+    "miniflare": "^4.20250404.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "3.1.1"
+  }
+}
